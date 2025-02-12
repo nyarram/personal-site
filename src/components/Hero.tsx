@@ -19,8 +19,8 @@ export const Hero = () => {
           Software Engineer
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Experienced software engineer specializing in full-stack development,
-          cloud architecture, and identity management solutions.
+          Passionate software engineer specializing in full-stack development, AI integration, and cloud scalability — 
+          designing high-performance systems that drive performance and security.
         </p>
         <div className="flex justify-center gap-4 mt-8">
           <SocialIcon 
