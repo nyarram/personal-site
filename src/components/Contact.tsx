@@ -19,7 +19,7 @@ export const Contact = () => {
           className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg"
         >
           <p className="text-center text-gray-600 dark:text-gray-300 mb-6">
-            I'm always open to discussing new opportunities and interesting projects.
+            I am always open to discussing new opportunities and interesting projects.
           </p>
           <div className="flex flex-col items-center gap-4">
             <a

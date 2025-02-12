@@ -28,7 +28,7 @@ export const Hero = () => {
             platform="linkedin"
           />
           <SocialIcon 
-            href="https://github.com/yourgithub"
+            href="https://github.com/nyarram"
             platform="github"
           />
           <SocialIcon 
