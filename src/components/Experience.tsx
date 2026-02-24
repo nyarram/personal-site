@@ -53,34 +53,60 @@ const experiences: ExperienceItem[] = [
 
 export const Experience = () => {
   return (
-    <section id="experience" className="py-20">
-      <motion.h2 
+    <section id="experience" className="py-20 px-4">
+      <motion.h2
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="text-3xl font-bold text-center mb-10 text-gray-900 dark:text-white"
+        viewport={{ once: true }}
+        className="text-3xl font-bold text-center mb-14"
       >
-        Experience
+        <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+          Experience
+        </span>
       </motion.h2>
-      <div className="max-w-4xl mx-auto">
+
+      <div className="relative max-w-4xl mx-auto">
+        {/* Vertical timeline line */}
+        <div className="absolute left-4 top-3 bottom-3 w-px bg-gradient-to-b from-blue-500/60 via-indigo-500/30 to-transparent" />
+
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            className="mb-8 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg"
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.12, duration: 0.5 }}
+            className="relative pl-14 mb-10 last:mb-0"
           >
-            <h3 className="text-xl font-bold text-gray-700 dark:text-white">{exp.company}</h3>
-            <p className="text-gray-600 dark:text-gray-300">{exp.role}</p>
-            <p className="text-gray-500 dark:text-gray-400">{exp.duration} | {exp.location}</p>
-            <ul className="mt-4 list-disc list-inside">
-              {exp.points.map((point, i) => (
-                <li key={i} className="text-gray-600 dark:text-gray-300 mb-2">{point}</li>
-              ))}
-            </ul>
+            {/* Timeline dot */}
+            <div className="absolute left-0 top-5 w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/40 flex items-center justify-center">
+              <div className="w-2 h-2 rounded-full bg-blue-400" />
+            </div>
+
+            {/* Card */}
+            <div className="bg-white dark:bg-white/[0.03] backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6 hover:border-blue-400/30 dark:hover:border-blue-500/30 transition-colors">
+              <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
+                <h3 className="text-base font-bold text-gray-900 dark:text-white">{exp.company}</h3>
+                <span className="text-xs text-gray-500 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
+                  {exp.duration}
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-x-4 mb-4">
+                <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">{exp.role}</p>
+                <p className="text-sm text-gray-400">{exp.location}</p>
+              </div>
+              <ul className="space-y-2">
+                {exp.points.map((point, i) => (
+                  <li key={i} className="flex gap-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <span className="text-blue-400 mt-0.5 shrink-0">▸</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
         ))}
       </div>
     </section>
   );
-}; 
+};
