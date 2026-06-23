@@ -3,15 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f8f9fb;
+  --foreground: #0f0f14;
 }
 
 html {
@@ -23,7 +16,14 @@ body {
   background: var(--background);
 }
 
+.dark body {
+  background-color: #07070f;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: #e8e8f0;
+}
+
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #07070f;
+  --foreground: #e8e8f0;
 } 

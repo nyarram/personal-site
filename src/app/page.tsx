@@ -7,7 +7,7 @@ import { Contact } from '@/components/Contact'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-[#f8f9fb] dark:bg-[#07070f] transition-colors duration-300">
       <Navbar />
       <main className="container mx-auto px-4">
         <Hero />
