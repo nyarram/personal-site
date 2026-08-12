@@ -12,9 +12,22 @@ type ExperienceItem = {
 
 const experiences: ExperienceItem[] = [
   {
+    company: "Chewy",
+    role: "Software Engineer",
+    duration: "Apr 2025 – Present",
+    location: "Minneapolis, MN",
+    points: [
+      "Architected partitioned event hydration, migrating 50 production subscriptions to V2 schemas without coordinated topic cutovers",
+      "Built async degraded-payment recovery (SQS/SNS) with idempotent reconciliation, preserving order intake during payment outages",
+      "Implemented allocation-aware split-fulfillment logic, piloted across 180 production orders spanning inventory, tax, and fulfillment",
+      "Extended delivery instructions across APIs, persistence, and events for an initiative projected to save $3.6M–$7.7M annually",
+      "Refactored shipment notification routing to a unified handler, retiring legacy code and removing 994 lines of dead logic"
+    ]
+  },
+  {
     company: "Indigo Systems & Technology Consulting Inc",
     role: "Software Engineer",
-    duration: "Sept 2023 – Present",
+    duration: "Sept 2023 – Apr 2025",
     location: "Chicago, IL",
     points: [
       "Architected a Kafka-integrated log analysis backend with Java Spring Boot & OpenSearch, processing 100K+ daily log entries and improving log query efficiency",
