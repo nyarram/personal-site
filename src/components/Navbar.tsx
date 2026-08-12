@@ -3,7 +3,7 @@
 import { useTheme } from '@/context/ThemeContext';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 
-const navLinks = ['experience', 'projects', 'skills', 'movies', 'contact'] as const;
+const navLinks = ['experience', 'journey', 'projects', 'skills', 'movies', 'contact'] as const;
 
 export const Navbar = () => {
   const { darkMode, toggleDarkMode } = useTheme();
