@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 type ExperienceItem = {
   company: string;
+  companyUrl: string;
   role: string;
   duration: string;
   location: string;
@@ -13,6 +14,7 @@ type ExperienceItem = {
 const experiences: ExperienceItem[] = [
   {
     company: "Chewy",
+    companyUrl: "https://www.chewy.com/",
     role: "Software Engineer",
     duration: "Apr 2025 – Present",
     location: "Minneapolis, MN",
@@ -26,6 +28,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "Indigo Systems & Technology Consulting Inc",
+    companyUrl: "http://indigoconsulting.com/",
     role: "Software Engineer",
     duration: "Sept 2023 – Apr 2025",
     location: "Chicago, IL",
@@ -40,6 +43,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "Oshkosh Corporation",
+    companyUrl: "https://www.oshkoshcorp.com/",
     role: "Co-op Software Engineer",
     duration: "Jun 2022 – May 2023",
     location: "Oshkosh, WI",
@@ -52,6 +56,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     company: "University of Wisconsin, Department of IT (DoIT)",
+    companyUrl: "https://it.wisc.edu/",
     role: "Identity and Access Management (IAM) Intern",
     duration: "Oct 2021 – May 2022",
     location: "Madison, WI",
@@ -99,7 +104,16 @@ export const Experience = () => {
             {/* Card */}
             <div className="bg-white dark:bg-white/[0.03] backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6 hover:border-blue-400/30 dark:hover:border-blue-500/30 transition-colors">
               <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
-                <h3 className="text-base font-bold text-gray-900 dark:text-white">{exp.company}</h3>
+                <a
+                  href={exp.companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/company"
+                >
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white group-hover/company:text-blue-500 dark:group-hover/company:text-blue-400 transition-colors">
+                    {exp.company}
+                  </h3>
+                </a>
                 <span className="text-xs text-gray-500 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full whitespace-nowrap">
                   {exp.duration}
                 </span>
