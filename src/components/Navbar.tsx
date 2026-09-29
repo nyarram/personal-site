@@ -3,7 +3,7 @@
 import { useTheme } from '@/context/ThemeContext';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
 
-const navLinks = ['experience', 'journey', 'projects', 'skills', 'movies', 'contact'] as const;
+const navLinks = ['about', 'experience', 'projects', 'skills', 'movies', 'contact'] as const;
 
 export const Navbar = () => {
   const { darkMode, toggleDarkMode } = useTheme();
@@ -14,7 +14,7 @@ export const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <a
             href="#"
-            className="text-xl font-bold bg-gradient-to-r from-blue-500 to-indigo-400 bg-clip-text text-transparent"
+            className="text-xl font-bold text-gray-900 dark:text-white"
           >
             NY
           </a>

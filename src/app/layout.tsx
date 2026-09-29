@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Nikhil Yarram - Software Engineer',
-  description: 'Software Engineer specializing in full-stack development, cloud architecture, and identity management solutions',
+  description: 'Software engineer building order-platform backends at Chewy, and open-source AI evaluation tooling.',
 }
 
 export default function RootLayout({

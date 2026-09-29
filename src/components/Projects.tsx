@@ -9,30 +9,46 @@ type Project = {
   points: string[];
   githubUrl?: string;
   liveUrl?: string;
+  featured?: boolean;
 };
 
 const projects: Project[] = [
   {
-    title: "Sustainable Product E-Commerce Site",
-    description: "A full-stack MERN e-commerce platform for sustainable products with real-time inventory and order management.",
-    technologies: ["React", "MongoDB", "Express", "Node.js", "REST API"],
+    title: "AstroDigest",
+    description: "A weekly AI-curated digest of astronomy news and research, delivered to web and mobile. Content from NASA, ESO, ALMA and arXiv is ingested daily, scored and summarized by an LLM, then assembled into one digest.",
+    technologies: ["TypeScript", "Next.js", "React Native", "Fastify", "BullMQ", "Redis", "Postgres", "Docker"],
     points: [
-      "Built a MERN-based product catalog with React, HTML, CSS, and Express",
-      "Deployed a MongoDB backend with efficient query indexing",
-      "Established RESTful APIs for product submission and order management"
+      "Designed a monorepo with web, mobile and API apps plus five packages for ingestion, scoring, summarization, editorial review and delivery",
+      "Split the pipeline across Cloudflare Workers (daily ingestion cron) and a Dockerized BullMQ worker fleet with self-hosted Redis",
+      "Added an editorial worker that flags low-quality and refusal summaries before they reach a digest",
+      "Deploys to a VPS on every merge to main through GitHub Actions; web ships on Vercel"
     ],
-    githubUrl: "https://github.com/nyarram"
+    githubUrl: "https://github.com/nyarram/astrodigest",
+    liveUrl: "https://astrodigest-web.vercel.app",
+    featured: true
   },
   {
-    title: "Urban Analysis using Computer Vision",
-    description: "Deep learning pipeline for urban analytics — crowd counting and object detection with real-time visualization.",
-    technologies: ["PyTorch", "TensorFlow", "React.js", "OpenCV"],
+    title: "Litmus",
+    description: "An open-source evaluation harness for LLM pipelines and agents. It answers \"did my last change make the system better or worse?\" and fails CI when quality regresses.",
+    technologies: ["Python", "OpenTelemetry", "Jaeger", "GitHub Actions", "Docker"],
     points: [
-      "Constructed deep learning pipeline for crowd counting and object detection",
-      "Engineered object detection models achieving 85% mAP",
-      "Designed React.js dashboard for real-time visualization"
+      "Runs versioned golden datasets through deterministic scorers and LLM judges, then diffs each run against a committed baseline",
+      "Calibrates judges against human labels before trusting them, and gates PRs on a score threshold",
+      "Traces every score back to the model call that produced it with OpenTelemetry GenAI conventions",
+      "Runs on free tiers or local models; 41 tests need no API keys"
     ],
-    githubUrl: "https://github.com/nyarram"
+    githubUrl: "https://github.com/nyarram/litmus"
+  },
+  {
+    title: "LIMS",
+    description: "A sample-tracking and inventory backend for a regulated laboratory, built on the idea that invariants belong in the database, not the application.",
+    technologies: ["Python", "Django", "PostgreSQL", "PL/pgSQL", "ltree"],
+    points: [
+      "Enforces sample lifecycles, non-negative stock and storage occupancy with constraints and triggers, so no writer can violate them",
+      "Writes a tamper-evident, append-only audit trail with database triggers and a hash chain, covering shell sessions and DBAs as well as the API",
+      "Implements FEFO inventory allocation and reservations; 64 tests run against real PostgreSQL"
+    ],
+    githubUrl: "https://github.com/nyarram/lims"
   }
 ];
 
@@ -57,7 +73,7 @@ export const Projects = () => {
         viewport={{ once: true }}
         className="text-3xl font-bold text-center mb-14"
       >
-        <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+        <span className="text-gray-900 dark:text-white">
           Projects
         </span>
       </motion.h2>
@@ -71,7 +87,7 @@ export const Projects = () => {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             whileHover={{ y: -4 }}
-            className="group relative bg-white dark:bg-white/[0.03] backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6 hover:border-blue-400/40 dark:hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/5 transition-all"
+            className={`group relative ${project.featured ? 'md:col-span-2' : ''} bg-white dark:bg-white/[0.03] backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6 hover:border-blue-400/40 dark:hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/5 transition-all`}
           >
             {/* Subtle glow on hover */}
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-500/0 to-indigo-500/0 group-hover:from-blue-500/[0.04] group-hover:to-indigo-500/[0.04] transition-all pointer-events-none" />
