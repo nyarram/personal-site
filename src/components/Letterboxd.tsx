@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 
 const languages = [
   { label: 'English', pct: 46, color: 'bg-blue-400' },
-  { label: 'Telugu', pct: 30, color: 'bg-indigo-400' },
-  { label: 'Hindi', pct: 14, color: 'bg-purple-400' },
+  { label: 'Telugu', pct: 30, color: 'bg-blue-400/70' },
+  { label: 'Hindi', pct: 14, color: 'bg-blue-400/40' },
   { label: 'Korean', pct: 6, color: 'bg-pink-400' },
   { label: 'Japanese', pct: 4, color: 'bg-rose-400' },
 ];
@@ -19,7 +19,7 @@ export const Letterboxd = () => {
         viewport={{ once: true }}
         className="text-3xl font-bold text-center mb-14"
       >
-        <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+        <span className="text-gray-900 dark:text-white">
           Movies I Love
         </span>
       </motion.h2>
@@ -32,8 +32,6 @@ export const Letterboxd = () => {
         className="max-w-xl mx-auto"
       >
         <div className="relative rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm p-8 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/[0.07] via-indigo-600/[0.04] to-transparent pointer-events-none" />
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
 
           <p className="text-center text-gray-400 text-sm leading-relaxed mb-8">
             Passionate movie buff! Always looking for the next one to rave about.

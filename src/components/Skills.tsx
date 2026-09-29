@@ -4,19 +4,20 @@ import { motion } from 'framer-motion';
 
 const skillCategories = [
   {
-    title: "Languages & Frameworks",
-    skills: ["Java", "Javascript", "Python", "SQL", "C++", "HTML", "CSS", "React", "Node.js", "PyTorch", "TensorFlow", "Spring Boot"],
-    color: { text: 'text-blue-400', border: 'border-blue-500/20', bg: 'bg-blue-500/10', heading: 'text-blue-400' }
+    title: "Languages",
+    skills: ["Java", "TypeScript", "Python", "SQL", "JavaScript", "C++"],
   },
   {
-    title: "Tools & Platforms",
-    skills: ["Docker", "Jira", "Git", "GitLab", "GitHub", "Kubernetes", "Kafka", "Jenkins", "CI/CD"],
-    color: { text: 'text-indigo-400', border: 'border-indigo-500/20', bg: 'bg-indigo-500/10', heading: 'text-indigo-400' }
+    title: "Backend & Data",
+    skills: ["Spring Boot", "Node.js", "Fastify", "Django", "PostgreSQL", "Redis", "Kafka", "REST APIs"],
   },
   {
-    title: "Cloud Platforms",
-    skills: ["AWS", "Microsoft Azure", "Google Cloud Platform"],
-    color: { text: 'text-purple-400', border: 'border-purple-500/20', bg: 'bg-purple-500/10', heading: 'text-purple-400' }
+    title: "Cloud & Infrastructure",
+    skills: ["AWS (SQS, SNS)", "Docker", "Kubernetes", "GitHub Actions", "Jenkins", "OpenTelemetry"],
+  },
+  {
+    title: "Frontend & ML",
+    skills: ["React", "Next.js", "React Native", "PyTorch", "TensorFlow"],
   }
 ];
 
@@ -29,12 +30,12 @@ export const Skills = () => {
         viewport={{ once: true }}
         className="text-3xl font-bold text-center mb-14"
       >
-        <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+        <span className="text-gray-900 dark:text-white">
           Skills
         </span>
       </motion.h2>
 
-      <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-6">
+      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
         {skillCategories.map((category, index) => (
           <motion.div
             key={index}
@@ -44,14 +45,14 @@ export const Skills = () => {
             transition={{ delay: index * 0.1 }}
             className="bg-white dark:bg-white/[0.03] backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-xl p-6"
           >
-            <h3 className={`text-xs font-semibold mb-4 uppercase tracking-widest ${category.color.heading}`}>
+            <h3 className="text-xs font-semibold mb-4 uppercase tracking-widest text-blue-400">
               {category.title}
             </h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill, i) => (
                 <span
                   key={i}
-                  className={`${category.color.bg} ${category.color.text} border ${category.color.border} px-3 py-1 rounded-full text-xs font-medium`}
+                  className="bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 px-3 py-1 rounded-full text-xs font-medium"
                 >
                   {skill}
                 </span>

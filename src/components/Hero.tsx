@@ -6,24 +6,6 @@ import { SocialIcon } from '@/components/SocialIcon';
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated gradient orbs */}
-      <div className="absolute inset-0 -z-10">
-        <motion.div
-          animate={{ scale: [1, 1.1, 1], opacity: [0.12, 0.22, 0.12] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 -left-32 w-[600px] h-[600px] bg-blue-600 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{ scale: [1, 1.15, 1], opacity: [0.08, 0.18, 0.08] }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-          className="absolute bottom-1/4 -right-32 w-[600px] h-[600px] bg-indigo-600 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{ scale: [1, 1.08, 1], opacity: [0.05, 0.1, 0.05] }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-violet-600 rounded-full blur-3xl"
-        />
-      </div>
 
       <div className="text-center px-4 max-w-3xl mx-auto">
         <motion.div
@@ -32,7 +14,7 @@ export const Hero = () => {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium tracking-widest uppercase mb-6"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
           Open to new opportunities
         </motion.div>
 
@@ -40,7 +22,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
-          className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-indigo-300 to-violet-400 bg-clip-text text-transparent leading-tight"
+          className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white leading-tight"
         >
           Nikhil Yarram
         </motion.h1>
@@ -58,10 +40,10 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
-          className="text-base text-gray-500 dark:text-gray-500 max-w-lg mx-auto leading-relaxed mb-10"
+          className="text-base text-gray-600 dark:text-gray-400 max-w-xl mx-auto leading-relaxed mb-10"
         >
-          Full-stack development, AI integration, and cloud scalability —
-          designing high-performance systems that drive performance and security.
+          Backend engineer at Chewy building event-driven order systems on AWS.
+          On the side: AI evaluation tooling and full-stack products in Python and TypeScript.
         </motion.p>
 
         {/* CTA buttons */}
@@ -72,8 +54,8 @@ export const Hero = () => {
           className="flex flex-wrap justify-center gap-3 mb-10"
         >
           <a
-            href="#experience"
-            className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-medium hover:from-blue-500 hover:to-indigo-500 transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30"
+            href="#projects"
+            className="px-6 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-500 transition-colors"
           >
             View My Work
           </a>

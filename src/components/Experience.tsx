@@ -78,14 +78,14 @@ export const Experience = () => {
         viewport={{ once: true }}
         className="text-3xl font-bold text-center mb-14"
       >
-        <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+        <span className="text-gray-900 dark:text-white">
           Experience
         </span>
       </motion.h2>
 
       <div className="relative max-w-4xl mx-auto">
         {/* Vertical timeline line */}
-        <div className="absolute left-4 top-3 bottom-3 w-px bg-gradient-to-b from-blue-500/60 via-indigo-500/30 to-transparent" />
+        <div className="absolute left-4 top-3 bottom-3 w-px bg-gradient-to-b from-blue-500/40 to-transparent" />
 
         {experiences.map((exp, index) => (
           <motion.div
