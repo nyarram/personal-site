@@ -94,7 +94,7 @@ export const Contact = () => {
           </div>
 
           <p className="text-center text-gray-600 text-xs mt-8">
-            Based in Chicago, IL · Open to remote & hybrid roles
+            Based in Minneapolis, MN · Relocating to the Bay Area
           </p>
         </div>
       </motion.div>
