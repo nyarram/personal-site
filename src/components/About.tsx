@@ -14,14 +14,15 @@ export const About = () => {
         <h2 className="text-3xl font-bold text-center mb-10 text-gray-900 dark:text-white">About</h2>
         <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
           <p>
-            I&apos;m a backend engineer at Chewy, working on the order platform: event-driven
-            systems on AWS, payment failure recovery, and split-fulfillment logic.
+            I&apos;m a backend engineer at Chewy on the orders platform, building order management
+            features in Java and Spring Boot and keeping them healthy in production: multi-FC
+            fulfillment, payment resiliency, and event-driven integrations on AWS and Kafka.
           </p>
           <p>
-            Outside of work I build things I&apos;d want to use. AstroDigest is a full-stack
-            product that turns astronomy news into a weekly digest, and Litmus is an
-            open-source harness that catches quality regressions in LLM pipelines before
-            they ship.
+            Outside of work I build tooling for AI agents. Litmus is an open-source harness that
+            catches quality regressions in LLM pipelines before they ship, identity-broker gives
+            agents short-lived, narrowly scoped credentials, and AstroDigest is a full-stack
+            product that turns astronomy news into a weekly digest.
           </p>
           <p>
             I studied at the University of Washington and the University of Wisconsin–Madison.

@@ -5,19 +5,27 @@ import { motion } from 'framer-motion';
 const skillCategories = [
   {
     title: "Languages",
-    skills: ["Java", "TypeScript", "Python", "SQL", "JavaScript", "C++"],
+    skills: ["Java", "Python", "TypeScript", "SQL", "Kotlin"],
   },
   {
-    title: "Backend & Data",
-    skills: ["Spring Boot", "Node.js", "Fastify", "Django", "PostgreSQL", "Redis", "Kafka", "REST APIs"],
+    title: "Backend & Architecture",
+    skills: ["Spring Boot", "REST APIs", "GraphQL", "Microservices", "JPA / Hibernate", "JUnit / Mockito", "Gatling"],
+  },
+  {
+    title: "Data & Messaging",
+    skills: ["PostgreSQL", "MongoDB", "Redis", "Kafka", "Flyway", "OpenSearch / Elasticsearch"],
   },
   {
     title: "Cloud & Infrastructure",
-    skills: ["AWS (SQS, SNS)", "Docker", "Kubernetes", "GitHub Actions", "Jenkins", "OpenTelemetry"],
+    skills: ["AWS (SNS, SQS, EC2, S3)", "Docker", "Kubernetes / EKS", "Terraform", "GitHub Actions", "Jenkins"],
   },
   {
-    title: "Frontend & ML",
-    skills: ["React", "Next.js", "React Native", "PyTorch", "TensorFlow"],
+    title: "AI & Tooling",
+    skills: ["RAG pipelines", "LLM APIs", "Agent frameworks", "MCP", "LangChain", "LLM-as-judge evals", "OpenTelemetry", "Claude Code", "Cursor"],
+  },
+  {
+    title: "Frontend",
+    skills: ["React", "Next.js", "React Native"],
   }
 ];
 
