@@ -28,6 +28,19 @@ const projects: Project[] = [
     featured: true
   },
   {
+    title: "Agent Identity Broker",
+    description: "An identity broker that gives AI agents short-lived, narrowly scoped credentials, so a hijacked or prompt-injected agent can only do what its current task allows.",
+    technologies: ["Java", "Spring Boot", "OAuth 2.0", "Cedar", "PostgreSQL", "TypeScript", "Docker", "Testcontainers"],
+    points: [
+      "Agents trade a human's delegation for a per-action access token (RFC 8693 token exchange) that is valid for 5 minutes, works against one API, and allows exactly one action",
+      "Evaluates every request against Cedar policies: refunds up to $50 are automatic, larger ones wait for human approval, and deletes are never allowed",
+      "Demo: a prompt-injected support agent tries to refund every order and delete records; the broker denies each out-of-task action while the legitimate refund still goes through",
+      "Supports revocation through introspection before every write, and keeps a hash-chained audit log the broker's own database role cannot alter; 29 end-to-end checks run against the stack"
+    ],
+    githubUrl: "https://github.com/nyarram/identity-broker",
+    featured: true
+  },
+  {
     title: "Litmus",
     description: "An open-source evaluation harness for LLM pipelines and agents. It answers \"did my last change make the system better or worse?\" and fails CI when quality regresses.",
     technologies: ["Python", "OpenTelemetry", "Jaeger", "GitHub Actions", "Docker"],
