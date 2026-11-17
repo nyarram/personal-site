@@ -19,38 +19,36 @@ const experiences: ExperienceItem[] = [
     duration: "Apr 2025 – Present",
     location: "Minneapolis, MN",
     points: [
-      "Architected partitioned event hydration, migrating 50 production subscriptions to V2 schemas without coordinated topic cutovers",
-      "Built async degraded-payment recovery (SQS/SNS) with idempotent reconciliation, preserving order intake during payment outages",
-      "Implemented allocation-aware split-fulfillment logic, piloted across 180 production orders spanning inventory, tax, and fulfillment",
-      "Extended delivery instructions across APIs, persistence, and events for an initiative projected to save $3.6M–$7.7M annually",
-      "Refactored shipment notification routing to a unified handler, retiring legacy code and removing 994 lines of dead logic"
+      "Built an allocation-level fulfillment engine sourcing single SKUs across multiple fulfillment centers (partial shipments, floor denials); scaled to 100% of production, unlocking $2M in savings",
+      "Architected a Spring Boot EKS module bridging SNS to Kafka for real-time order notifications, with at-least-once delivery, order-keyed partitioning, and DLQ redrive; targets ~$2.2M in annual cost deflection",
+      "Engineered a zero-downtime V1-to-V2 order-event migration across 50 SNS subscriptions, using a transactional outbox with stable order-ID bucketing to keep lifecycle schemas consistent without coordinated cutovers",
+      "Developed an async payment-resiliency state machine on FIFO SQS/SNS and DLQs, decoupling Checkout from 3 synchronous payment gateways during 5xx outages to preserve order intake with a 3-day recovery SLA",
+      "Led remediation of a distributed tax defect, using Snowflake lineage analysis to cut a 1.25M-line blast radius to 1,009 lines, and designed an FC-keyed consistency path across 3 core services to resolve a $391K historical variance"
     ]
   },
   {
-    company: "Indigo Systems & Technology Consulting Inc",
+    company: "Verizon (via Indigo Systems)",
     companyUrl: "http://indigoconsulting.com/",
     role: "Software Engineer",
     duration: "Sept 2023 – Apr 2025",
     location: "Chicago, IL",
     points: [
-      "Architected a Kafka-integrated log analysis backend with Java Spring Boot & OpenSearch, processing 100K+ daily log entries and improving log query efficiency",
-      "Developed a React dashboard on a Node.js server, enabling real-time authentication tracking and log visualization, reducing debugging time by 50%",
-      "Engineered custom Java authentication nodes for Forgerock AM, facilitating risk-based authentication and session state management through shared-state logic",
-      "Designed a high-throughput, low-latency CRUD API on Docker, supporting 1M+ monthly identity operations across multi-team microservices",
-      "Automated ForgeRock AM deployments via Kubernetes and Helm, streamlining GCP-hosted upgrades, rollbacks, and multi-environment deployments",
-      "Developing a Python-based fraud detection system, integrating IP analysis, login patterns, and anomaly detection, reducing false-positive security flags by 10%"
+      "Built a distributed log-correlation engine (Spring Boot) over OpenSearch streams processing 100K+ daily audit events, using iterative connected-components to stitch fragmented events into IAM journeys; cut debugging time 50%",
+      "Architected an LDAP identity-resolution module with a custom UnboundID connection pool (leak tracking, auto-rebinds), deployed on Docker/Kubernetes to support millions of monthly authentication operations",
+      "Engineered custom Java authentication nodes for ForgeRock AM, enabling risk-based authentication and session state management through shared-state logic",
+      "Automated ForgeRock AM deployments with Kubernetes and Helm, streamlining GCP-hosted upgrades, rollbacks, and multi-environment releases"
     ]
   },
   {
     company: "Oshkosh Corporation",
     companyUrl: "https://www.oshkoshcorp.com/",
-    role: "Co-op Software Engineer",
+    role: "Software Engineer Co-op",
     duration: "Jun 2022 – May 2023",
     location: "Oshkosh, WI",
     points: [
+      "Architected GraphQL API endpoints with FastAPI for a fleet management platform, improving real-time analytics performance by 20%",
       "Crafted a fleet management platform in Python, enabling real-time vehicle telemetry and predictive maintenance to reduce fleet costs by 25%",
       "Implemented AWS S3 & EC2 for scalable data storage, lowering infrastructure costs by 15% while enhancing data accessibility",
-      "Optimized PostgreSQL indexing strategies, improving query performance and real-time analytics by 20%",
       "Built RESTful APIs to integrate vehicle logs, streamlining fleet data processing and real-time monitoring"
     ]
   },
