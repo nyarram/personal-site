@@ -50,7 +50,8 @@ const projects: Project[] = [
       "Traces every score back to the model call that produced it with OpenTelemetry GenAI conventions",
       "Runs on free tiers or local models; 41 tests need no API keys"
     ],
-    githubUrl: "https://github.com/nyarram/litmus"
+    githubUrl: "https://github.com/nyarram/litmus",
+    liveUrl: "https://litmus.188-34-162-117.sslip.io/"
   },
   {
     title: "LIMS",
